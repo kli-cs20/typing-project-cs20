@@ -39,6 +39,9 @@ function keydownHandler(event) {
     } else if (JSON.stringify(userKeys) === JSON.stringify(q2Array)) {
         phraseTwoEl.style.fontWeight = "bold";
         phraseTwoEl.style.color = "green";
+    } else if (JSON.stringify(userKeys) === JSON.stringify(q3Array)) {
+        phraseThreeEl.style.fontWeight = "bold";
+        phraseThreeEl.style.color = "green";
     }
 }
 
