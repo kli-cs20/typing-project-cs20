@@ -3,14 +3,16 @@
 // Variables for HTML Elements
 let phraseOneEl = document.getElementById("phraseOne");
 let phraseTwoEl = document.getElementById("phraseTwo");
-let questionInputEl = document.getElementById("questionInput")
+let phraseThreeEl = document.getElementById("phraseThree");
+let questionInputEl = document.getElementById("questionInput");
 
 // Array the user has to type
 let strOne = phraseOneEl.innerHTML;
 let q1Array = strOne.split("");
 let strTwo = phraseTwoEl.innerHTML;
 let q2Array = strTwo.split("");
-
+let strThree = phraseThreeEl.innerHTML;
+let q3Array = strThree.split("");
 
 
 // Empty Array for User's Keystrokes
@@ -47,6 +49,10 @@ function limitUserInput(question) {
         }
     } else if (question === "two") {
         if (userKeys.length > 46) {
+            userKeys.splice(0, 1);
+        }
+    } else if (question === "three") {
+        if (userKeys.length > 53) {
             userKeys.splice(0, 1);
         }
     }
