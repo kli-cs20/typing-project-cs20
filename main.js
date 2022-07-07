@@ -25,16 +25,8 @@ function keydownHandler(event) {
 
 
     // Cap length of array
-    let question = questionInputEl.ariaValueMax;
-    if (question === "one") {
-        if (userKeys.length > 44) {
-            userKeys.splice(0, 1);
-        }
-    } else if (question === "two") {
-        if (userKeys.length > 46) {
-            userKeys.splice(0, 1);
-        }
-    }
+    let question = questionInputEl.value;
+    limitUserInput(question);
 
     console.log(userKeys);
 
@@ -45,5 +37,17 @@ function keydownHandler(event) {
     } else if (JSON.stringify(userKeys) === JSON.stringify(q2Array)) {
         phraseTwoEl.style.fontWeight = "bold";
         phraseTwoEl.style.color = "green";
+    }
+}
+
+function limitUserInput(question) {
+    if (question === "one") {
+        if (userKeys.length > 44) {
+            userKeys.splice(0, 1);
+        }
+    } else if (question === "two") {
+        if (userKeys.length > 46) {
+            userKeys.splice(0, 1);
+        }
     }
 }
