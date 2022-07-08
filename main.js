@@ -4,7 +4,8 @@
 let phraseOneEl = document.getElementById("phraseOne");
 let phraseTwoEl = document.getElementById("phraseTwo");
 let phraseThreeEl = document.getElementById("phraseThree");
-let questionInputEl = document.getElementById("questionInput");
+let phraseFourEl = document.getElementById("phraseFour");
+let phraseInputEl = document.getElementById("phraseInput");
 
 // Array the user has to type
 let strOne = phraseOneEl.innerHTML;
@@ -13,6 +14,8 @@ let strTwo = phraseTwoEl.innerHTML;
 let q2Array = strTwo.split("");
 let strThree = phraseThreeEl.innerHTML;
 let q3Array = strThree.split("");
+let strFour = phraseFourEl.innerHTML;
+let q4Array = strFour.split("");
 
 
 // Empty Array for User's Keystrokes
@@ -27,8 +30,8 @@ function keydownHandler(event) {
 
 
     // Cap length of array
-    let question = questionInputEl.value;
-    limitUserInput(question);
+    let phraseNum = phraseInputEl.value;
+    limitUserInput(phraseNum);
 
     console.log(userKeys);
 
@@ -42,20 +45,27 @@ function keydownHandler(event) {
     } else if (JSON.stringify(userKeys) === JSON.stringify(q3Array)) {
         phraseThreeEl.style.fontWeight = "bold";
         phraseThreeEl.style.color = "green";
+    } else if (JSON.stringify(userKeys) === JSON.stringify(q4Array)) {
+        phraseFourEl.style.fontWeight = "bold";
+        phraseFourEl.style.color = "green";
     }
 }
 
-function limitUserInput(question) {
-    if (question === "one") {
+function limitUserInput(phrase) {
+    if (phrase === "one") {
         if (userKeys.length > 44) {
             userKeys.splice(0, 1);
         }
-    } else if (question === "two") {
+    } else if (phrase === "two") {
         if (userKeys.length > 46) {
             userKeys.splice(0, 1);
         }
-    } else if (question === "three") {
+    } else if (phrase === "three") {
         if (userKeys.length > 53) {
+            userKeys.splice(0, 1);
+        }
+    } else if (phrase === "four") {
+        if (userKeys.length > 85) {
             userKeys.splice(0, 1);
         }
     }
