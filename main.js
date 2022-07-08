@@ -33,22 +33,8 @@ function keydownHandler(event) {
     let phraseNum = phraseInputEl.value;
     limitUserInput(phraseNum);
 
-    console.log(userKeys);
-
     // Check if correct
-    if (JSON.stringify(userKeys) === JSON.stringify(q1Array)) {
-        phraseOneEl.style.fontWeight = "bold";
-        phraseOneEl.style.color = "green";
-    } else if (JSON.stringify(userKeys) === JSON.stringify(q2Array)) {
-        phraseTwoEl.style.fontWeight = "bold";
-        phraseTwoEl.style.color = "green";
-    } else if (JSON.stringify(userKeys) === JSON.stringify(q3Array)) {
-        phraseThreeEl.style.fontWeight = "bold";
-        phraseThreeEl.style.color = "green";
-    } else if (JSON.stringify(userKeys) === JSON.stringify(q4Array)) {
-        phraseFourEl.style.fontWeight = "bold";
-        phraseFourEl.style.color = "green";
-    }
+    checkAnswer(JSON.stringify(userKeys));
 }
 
 function limitUserInput(phrase) {
@@ -68,5 +54,22 @@ function limitUserInput(phrase) {
         if (userKeys.length > 85) {
             userKeys.splice(0, 1);
         }
+    }
+}
+
+function checkAnswer(string) {
+    // Check if correct
+    if (string === JSON.stringify(q1Array)) {
+        phraseOneEl.style.fontWeight = "bold";
+        phraseOneEl.style.color = "green";
+    } else if (string === JSON.stringify(q2Array)) {
+        phraseTwoEl.style.fontWeight = "bold";
+        phraseTwoEl.style.color = "green";
+    } else if (string === JSON.stringify(q3Array)) {
+        phraseThreeEl.style.fontWeight = "bold";
+        phraseThreeEl.style.color = "green";
+    } else if (string === JSON.stringify(q4Array)) {
+        phraseFourEl.style.fontWeight = "bold";
+        phraseFourEl.style.color = "green";
     }
 }
