@@ -36,8 +36,6 @@ function keydownHandler(event) {
     // Extraneous key characters
     checkCharacters(userKeys);
 
-    console.log(userKeys)
-
     // Check if correct
     checkAnswer(JSON.stringify(userKeys));
 }
