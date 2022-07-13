@@ -12,12 +12,9 @@ resetBtn.addEventListener("click", reset);
 
 let [millisecond, second, minute] = [0, 0, 0];
 let timerRef = document.querySelector(".mainTime");
-let int = null;
+let int;
 
 function start() {
-    if (int !== null) {
-        clearInterval(int);
-    }
     int = setInterval(mainTime, 10);
 }
 
@@ -38,14 +35,12 @@ function mainTime() {
         if (second === 60) {
             second = 0;
             minute++;
-            if (minute === 60) {
-                minute = 0;
-            }
         }
     }
-    let m = minute < 10 ? "0" + minute : minute;
-    let s = second < 10 ? "0" + second : second;
-    let ms = millisecond < 10 ? "00" + millisecond : millisecond < 100 ? "0" + millisecond : millisecond;
+
+    let m = minute;
+    let s = second;
+    let ms = millisecond;
     timerRef.innerHTML = ` ${m} : ${s} : ${ms}`;
 }
 
