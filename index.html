@@ -13,6 +13,20 @@
         Practice typing the phrases <b>without any mistakes</b>.  Refresh the page to restart.
     </p>
     <hr>
+
+    <div id="stopwatch">
+        <div class="mainTime">
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+            <span id="milliseconds">00</span>
+        </div>
+        
+        <br>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+
     <p>Choose which question to practice.</p> 
     <select id="phraseInput">
         <option value="one">Phrase 1</option>
@@ -34,6 +48,7 @@
     <p id="phraseFour">Insanity is doing the same thing over and over again and expecting different results.</p>
     <input type="letter">
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/timer.js"></script>
 </body>
 </html>
