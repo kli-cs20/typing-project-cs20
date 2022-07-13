@@ -29,9 +29,14 @@ function keydownHandler(event) {
     userKeys.push(event.key);
 
 
-    // Cap length of array
+    // Cap length of array based on input value
     let phraseNum = phraseInputEl.value;
     limitUserInput(phraseNum);
+
+    // Extraneous key characters
+    checkCharacters(userKeys);
+
+    console.log(userKeys)
 
     // Check if correct
     checkAnswer(JSON.stringify(userKeys));
@@ -55,6 +60,17 @@ function limitUserInput(phrase) {
             userKeys.splice(0, 1);
         }
     }
+}
+
+function checkCharacters(array) {
+    let lastInput = array.length - 1;
+    // Delete backspace value in array AND character that was backspaced
+    if (array[lastInput] === "Backspace") {
+        array.pop();
+        array.pop();
+    }
+    // Deleting shift values from array is not needed because shift is only needed to capitalize the first letter
+    // Which will be taken out at the end anyway
 }
 
 function checkAnswer(string) {
