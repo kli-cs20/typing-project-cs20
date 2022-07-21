@@ -10,7 +10,7 @@ startBtn.addEventListener("click", start);
 stopBtn.addEventListener("click", stop);
 resetBtn.addEventListener("click", reset);
 
-let [millisecond, second, minute] = [0, 0, 0];
+let [minute, second, millisecond] = [0, 0, 0];
 let timerRef = document.getElementById("mainTime");
 let int;
 
@@ -23,7 +23,7 @@ function stop() {
 }
 
 function reset() {
-    [millisecond, second, minute] = [0, 0, 0];
+    [minute, second, millisecond] = [0, 0, 0];
     timerRef.innerHTML = "00 : 00 : 00";
 }
 
