@@ -11,7 +11,7 @@ stopBtn.addEventListener("click", stop);
 resetBtn.addEventListener("click", reset);
 
 let [millisecond, second, minute] = [0, 0, 0];
-let timerRef = document.querySelector(".mainTime");
+let timerRef = document.getElementById("mainTime");
 let int;
 
 function start() {
